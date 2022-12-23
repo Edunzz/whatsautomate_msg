@@ -1,10 +1,10 @@
 {
-  "name": "my-app",
+  "name": "whatsautomate",
   "version": "1.0.0",
-  "description": "Whatsautomate",
-  "main": "index.js",
+  "description": "Whatsautomate Service",
+  "main": "app.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node app.js"
   },
   "dependencies": {
     "express": "^4.17.1"
