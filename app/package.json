@@ -1,7 +1,7 @@
 {
   "name": "my-app",
   "version": "1.0.0",
-  "description": "My Node.js App",
+  "description": "Whatsautomate",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
