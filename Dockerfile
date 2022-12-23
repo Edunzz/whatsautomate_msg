@@ -1,18 +1,12 @@
-FROM node:latest
+FROM node:12
 
-# Create app directory
-WORKDIR /usr/src/app
+WORKDIR /app
 
+COPY ./app/package.json package-lock.json ./
 RUN npm install
 
-# Bundle app source
-COPY . .
+COPY ./app .
 
-# Build the app
-RUN npm run build
-
-# Expose the app's port
 EXPOSE 3000
 
-# Run the app
-CMD [ "npm", "start" ]
+CMD ["npm", "start"]
