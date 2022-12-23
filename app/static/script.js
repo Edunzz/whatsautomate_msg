@@ -13,7 +13,7 @@ document.getElementById('separate_numbers_btn').addEventListener('click', functi
 
 document.getElementById('clear_btn').addEventListener('click', function() {
   document.getElementById('text_numbers').value = '';
-  document.getElementById('text_message').value = '';
+  //document.getElementById('text_message').value = '';
   const table = document.getElementById('table_numbers');
   while (table.tBodies[0].firstChild) {
     table.tBodies[0].removeChild(table.tBodies[0].firstChild);
