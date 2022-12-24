@@ -1,6 +1,12 @@
 version: '3'
 services:
-  app:
-    build: .
+  whatsautomate_app:
+    container_name: whatsautomate_app
+    build: ./whatsautomate_app
     ports:
       - "3000:3000"
+  whatsapp_node_api:
+    container_name: whatsapp_node_api
+    build: ./whatsapp_node_api
+    ports:
+      - "5000:5000"
