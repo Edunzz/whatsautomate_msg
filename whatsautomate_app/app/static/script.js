@@ -1,4 +1,19 @@
-document.getElementById('separate_numbers_btn').addEventListener('click', function() {
+function clear_btn_text_numbers_text(){
+  document.getElementById('text_numbers').value = '';
+}
+
+function clear_btn_text_numbers_table(){
+  const table = document.getElementById('table_numbers');
+  while (table.tBodies[0].firstChild) {
+    table.tBodies[0].removeChild(table.tBodies[0].firstChild);
+  }
+}
+
+function clear_btn_text_message(){
+  document.getElementById('text_message').value = '';
+}
+
+function separate_numbers_btn(){
   const textarea = document.getElementById('text_numbers');
   const numbers = textarea.value.split(',');
   const table = document.getElementById('table_numbers');
@@ -9,13 +24,20 @@ document.getElementById('separate_numbers_btn').addEventListener('click', functi
     row.appendChild(cell);
     table.tBodies[0].appendChild(row);
   });
+}
+
+document.getElementById('separate_numbers_btn').addEventListener('click', function() {
+  clear_btn_text_numbers_table();
+  separate_numbers_btn();
 });
 
 document.getElementById('clear_btn').addEventListener('click', function() {
-  document.getElementById('text_numbers').value = '';
-  //document.getElementById('text_message').value = '';
-  const table = document.getElementById('table_numbers');
-  while (table.tBodies[0].firstChild) {
-    table.tBodies[0].removeChild(table.tBodies[0].firstChild);
-  }
+  clear_btn_text_numbers_text();
+  clear_btn_text_numbers_table();
+});
+
+document.getElementById('send_message_btn').addEventListener('click', function() {
+  clear_btn_text_numbers_table();
+  separate_numbers_btn();
+  console.log("se esta enviando mensajes");
 });
