@@ -26,8 +26,9 @@ app.get('/autorizar', (req, res) => {
   });
 });
 
-app.get('/sent', (req, res) => {
-  console.log('se esta enviando un mensaje');
+app.post('/send', (req, res) => {
+  console.log(req.body.row);
+  res.send("se envio el mensaje");
 });
 
 app.listen(3000, () => {

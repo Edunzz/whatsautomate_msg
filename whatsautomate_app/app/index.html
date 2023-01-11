@@ -6,44 +6,46 @@
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <div class="modal-dialog">
-        <div class="modal-content rounded-4 shadow">
-            <div class="modal-header border-bottom-0">
-                <h4 class="mb-0">Contendio que quieres enviar</h4>
-            </div>
-            <div class="modal-body py-0">
-                <div class="mb-2">
-                    <textarea id="text_message" placeholder="Ingresa tu mensaje, se puede incluir emojis" class="form-control mb-2"></textarea>
-                    <div class="input-group mb-2">
-                        <input type="file" class="form-control mb-2" id="inputGroupFile01">
-                    </div>
-                    <button id="send_message_btn" class="btn btn-lg btn-success w-100 mx-0 mb-2">Enviar Mensaje</button>
-                </div>
-            </div>
+  <div class="modal-dialog">
+    <div class="modal-content rounded-4 shadow">
+      <div class="modal-header border-bottom-0">
+        <h4 class="mb-0">Contendio que quieres enviar</h4>
+      </div>
+      <div class="modal-body py-0">
+        <div class="mb-2">
+          <textarea id="text_message" placeholder="Ingresa tu mensaje, se puede incluir emojis"
+            class="form-control mb-2"></textarea>
+          <div class="input-group mb-2">
+            <input type="file" class="form-control mb-2" id="inputGroupFile01">
           </div>
+          <button id="send_message_btn" class="btn btn-lg btn-success w-100 mx-0 mb-2">Enviar Mensaje</button>
+        </div>
+      </div>
     </div>
-    <div class="modal-dialog">
-        <div class="modal-content rounded-4 shadow">
-            <div class="modal-body py-0">
-                <div class="modal-header border-bottom-0">
-                    <h4 class="mb-0">Cargar números</h4>
-                </div>
-                <div class="mb-2">
-                  <textarea id="text_numbers" placeholder="Ingresa los números de celular separados por ','" class="form-control mb-2"></textarea>
-                  <button id="separate_numbers_btn" class="btn btn-lg btn-primary w-100 mx-0 mb-2">Separar números</button>
-                  <button id="clear_btn" class="btn btn-lg btn btn-danger w-100 mx-0 mb-2">Limpiar</button>
-                </div>
-                <table id="table_numbers" class="table mb-4">
-                  <thead>
-                    <tr>
-                      <th>Phone Number</th>
-                    </tr>
-                  </thead>
-                  <tbody></tbody>
-                </table>
-            </div>
-          </div>
+  </div>
+  <div class="modal-dialog">
+    <div class="modal-content rounded-4 shadow">
+      <div class="modal-body py-0">
+        <div class="modal-header border-bottom-0">
+          <h4 class="mb-0">Cargar números</h4>
+        </div>
+        <div class="mb-2">
+          <textarea id="text_numbers" placeholder="Ingresa los números de celular separados por ','"
+            class="form-control mb-2"></textarea>
+          <button id="separate_numbers_btn" class="btn btn-lg btn-primary w-100 mx-0 mb-2">Separar números</button>
+          <button id="clear_btn" class="btn btn-lg btn btn-danger w-100 mx-0 mb-2">Limpiar</button>
+        </div>
+        <table id="table_numbers" class="table mb-4">
+          <thead>
+            <tr>
+              <th>Phone Number</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
     </div>
+  </div>
   <script src="/script.js"></script>
 </body>
 </html>
