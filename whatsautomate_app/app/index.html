@@ -1,28 +1,34 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>WHATSAUTOMATE_MSG</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="/style.css">
 </head>
+
 <body>
-  <div class="modal-dialog">
-    <div class="modal-content rounded-4 shadow">
-      <div class="modal-header border-bottom-0">
-        <h4 class="mb-0">Contendio que quieres enviar</h4>
-      </div>
-      <div class="modal-body py-0">
-        <div class="mb-2">
-          <textarea id="text_message" placeholder="Ingresa tu mensaje, se puede incluir emojis"
-            class="form-control mb-2"></textarea>
-          <div class="input-group mb-2">
-            <input type="file" class="form-control mb-2" id="inputGroupFile01">
+  <form method="post" action="/send">
+    <div class="modal-dialog">
+      <div class="modal-content rounded-4 shadow">
+        <div class="modal-header border-bottom-0">
+          <h4 class="mb-0">Contendio que quieres enviar</h4>
+        </div>
+        <div class="modal-body py-0">
+          <div class="mb-2">
+            <textarea id="text_message" name="text_message" placeholder="Ingresa tu mensaje, se puede incluir emojis"
+              class="form-control mb-2"></textarea>
+            <div class="input-group mb-2">
+              <input id="input_file" name="input_file" type="file" class="form-control mb-2">
+            </div>
+            <input type="hidden" id="list_numbers" name="list_numbers" value="">
+            <button id="send_message_btn" type="submit" class="btn btn-lg btn-success w-100 mx-0 mb-2">Enviar
+              Mensaje</button>
           </div>
-          <button id="send_message_btn" class="btn btn-lg btn-success w-100 mx-0 mb-2">Enviar Mensaje</button>
         </div>
       </div>
     </div>
-  </div>
+  </form>
   <div class="modal-dialog">
     <div class="modal-content rounded-4 shadow">
       <div class="modal-body py-0">
@@ -48,4 +54,5 @@
   </div>
   <script src="/script.js"></script>
 </body>
+
 </html>

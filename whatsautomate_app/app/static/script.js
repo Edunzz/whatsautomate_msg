@@ -26,40 +26,30 @@ function separate_numbers_btn(){
   });
 }
 
-async function sendTable() {
-  // Obtén todas las filas de la tabla
-  const rows = document.querySelectorAll('#table_numbers tr');
-
-  // Itera sobre cada fila y envía una solicitud POST a la API
-  for (const row of rows) {
-    // Crea un FormData con la fila
-    const data = new FormData();
-    data.append('row', row.outerHTML);
-
-    // Envía la solicitud POST a la API
-    const response = await fetch('/send', { method: 'POST', body: data });
-    const result = await response.text();
-
-    // Muestra el resultado en la consola
-    console.log(row);
-    console.log(result);
+function concatenateTableValues() {
+  var table = document.getElementById("table_numbers");
+  var input = document.getElementById("list_numbers");
+  var values = [];
+  
+  for (var i = 1, row; row = table.rows[i]; i++) {
+    values.push(row.cells[0].innerHTML);
   }
+  
+  input.value = values.join(",");
 }
 
-document.getElementById('separate_numbers_btn').addEventListener('click', function() {
+document.getElementById('separate_numbers_btn').addEventListener('click', (event) => {
   clear_btn_text_numbers_table();
   separate_numbers_btn();
 });
 
-document.getElementById('clear_btn').addEventListener('click', function() {
+document.getElementById('clear_btn').addEventListener('click', (event) => {
   clear_btn_text_numbers_text();
   clear_btn_text_numbers_table();
 });
 
-document.getElementById('send_message_btn').addEventListener('click', function() {
+document.getElementById('send_message_btn').addEventListener('click', (event) => {
   clear_btn_text_numbers_table();
   separate_numbers_btn();
-  console.log("se esta enviando mensajes");
-
-  sendTable()
+  concatenateTableValues();
 });
