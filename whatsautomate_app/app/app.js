@@ -3,7 +3,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const path = require('path');
-const qrcode = require('qrcode-terminal');
+
+app.use(express.static(path.join(__dirname, 'static')));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // whatsapp api node js
 const { Client } = require('whatsapp-web.js');
@@ -12,22 +14,19 @@ const client = new Client({
     args: ['--no-sandbox'],
   }
 });
+client.initialize();
 
-app.use(express.static(path.join(__dirname, 'static')));
-
-app.use(bodyParser.urlencoded({ extended: true }));
+// variables
+client_status = "disabled";
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 app.get('/qr_login', (req, res) => {
-  client.initialize();
   client.on('qr', qr => {
-    qrcode.generate(qr, { small: true }, qr_generado => {
-      res.send(qr_generado);
-      console.log('QR RECEIVED', qr_generado);
-    });
+    res.send(qr);
+    console.log(qr);
   });
 });
 
@@ -51,7 +50,15 @@ app.listen(3000, () => {
 
 client.on('ready', () => {
   console.log('Client is ready!');
+  client_status = "enabled";
 });
+
+app.get('/status', (req, res) => {
+  res.json({
+    status: client_status,
+    number_server: 1
+  });
+})
 
 //client.on('message', message => {
 //  console.log(message.from);
